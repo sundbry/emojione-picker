@@ -1,12 +1,15 @@
 var React = require("react");
-var Emoji = require("./emoji");
+var EmojiClass = require("./emoji");
 var Modifiers = require("./modifiers");
 var strategy = require("./strategy");
-var emojione = require("emojione");
 var store = require("store");
 var _ = require("underscore");
 
-var Picker = React.createClass({
+var Picker = (emojilib) => {
+
+  var Emoji = EmojiClass(emojilib);
+
+  return React.createClass({
     propTypes: {
       search: React.PropTypes.string,
       onChange: React.PropTypes.func.isRequired
@@ -228,5 +231,6 @@ var Picker = React.createClass({
       </div>
     }
 });
+};
 
 module.exports = Picker;

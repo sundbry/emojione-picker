@@ -155,7 +155,7 @@ var Picker = (emojilib) => {
 
       _.each(this.props.categories, function(details, key){
         headers.push(<li key={key} className={this.state.category == key ? "active" : ""}>
-          <Emoji role="menuitem" aria-label={key + " category"} shortname={":"+details.emoji+":"} onClick={function(){
+          <Emoji role="menuitem" aria-label={key + " category"} shortname={":"+details.emoji+":"} onTouchTap={function(){
             jumpToCategory(key);
           }}/>
         </li>);
@@ -180,7 +180,7 @@ var Picker = (emojilib) => {
 
             if (!search || !term || modified.keywords.some(function(keyword) { return new RegExp("^"+term).test(keyword); })) {
 
-              return <li key={modified.unicode}><Emoji {...modified} aria-label={modified.name} role="option" onClick={function(){
+              return <li key={modified.unicode}><Emoji {...modified} aria-label={modified.name} role="option" onTouchTap={function(){
                 onChange(modified);
               }}/></li>;
             }

@@ -3,7 +3,7 @@ var React = require("react");
 var Emoji = (emojilib) => {
   return React.createClass({
     propTypes: {
-      onClick: React.PropTypes.func
+      onTouchTap: React.PropTypes.func
     },
     
     shouldComponentUpdate: function(nextProps, nextState) {
@@ -16,7 +16,7 @@ var Emoji = (emojilib) => {
     },
     
     render: function() {
-      return <div {...this.props} onClick={this.props.onClick} tabIndex="0" className="emoji" 
+      return <div {...this.props} onTouchTap={this.props.onTouchTap} tabIndex="0" className="emoji" 
                   title={this.props.name} 
                   dangerouslySetInnerHTML={this.createMarkup()}>
       </div>

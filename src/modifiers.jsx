@@ -26,7 +26,7 @@ var Modifiers = React.createClass({
     var onChange = this.props.onChange;
     
     _.each(this.props.modifiers, function(hex, index){
-      list.push(<li key={index}><Modifier hex={hex} active={this.props.active == index} onClick={function(){
+      list.push(<li key={index}><Modifier hex={hex} active={this.props.active == index} onTouchTap={function(){
         onChange(index);
       }} /></li>);
     }.bind(this));

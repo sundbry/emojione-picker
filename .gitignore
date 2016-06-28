@@ -2,3 +2,5 @@ node_modules
 build
 lib/preview.js
 .DS_Store
+*.swp
+*.swo

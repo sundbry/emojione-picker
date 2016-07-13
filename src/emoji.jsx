@@ -1,6 +1,6 @@
 var React = require("react");
 
-var Emoji = (emojilib) => {
+var Emoji = function(emojilib) {
   return React.createClass({
     propTypes: {
       onTouchTap: React.PropTypes.func
